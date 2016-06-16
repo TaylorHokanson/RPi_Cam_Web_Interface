@@ -4,11 +4,12 @@ adds an IR LED array that is controllable via web interface.
 
 Part | Cost
 | --- | ---: |
-| Raspberry Pi board (mine is B2 v1.1) | $TBA |
-| USB wifi dongle or ethernet connection | $TBA |
+| [Raspberry Pi board](http://www.newark.com/raspberry-pi/rpi2-modb-8gb-noobs/sbc-raspberry-pi-2-model-b-8gb/dp/38Y6469?selectedCategoryId=&exaMfpn=true&categoryId=&searchRef=SearchLookAhead&iscrfnonsku=false) (mine is B2 v1.1) | $40 |
+| [Noir camera board](http://www.newark.com/raspberry-pi/rpi-noir-camera-board/raspberry-pi-noir-camera-board/dp/08X2023) | $25 |
+| [USB wifi dongle](http://www.newark.com/adafruit-industries/814/miniature-wifi-module-raspberry/dp/53W6285?ost=53W6285&selectedCategoryId=&categoryNameResp=All%2BCategories&iscrfnonsku=false) | $12 |
 | [12v power supply](https://www.amazon.com/gp/product/B00DKSI0S8/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) | $12 |
-| IR LED array | $TBA |
+| [IR LED array](https://www.amazon.com/gp/product/B0056XFS5S/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1) | $4 |
 | [12v -> 5v buck](https://www.amazon.com/gp/product/B008BHAOQO/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) | $6 |
-| XXX MOSFET | $TBA |
-| various resistors and soldering supplies |  |
-| Total | $TBA |
+| [N-Channel MOSFET](https://www.sparkfun.com/products/10213) | $1 |
+| 10k resistor | |
+| Total | $100 |
