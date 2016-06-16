@@ -1,7 +1,13 @@
-Web based interface for controlling the Raspberry Pi Camera, includes motion detection, time lapse, and image and video recording.
-Current version 6.2.2
-All information on this project can be found here: http://www.raspberrypi.org/forums/viewtopic.php?f=43&t=63276
+This project is a fork of the [RPi Cam Web
+Interface](https://github.com/silvanmelchior/RPi_Cam_Web_Interface). It
+adds an IR LED array that is controllable via web interface.
 
-The wiki page can be found here:
-
-http://elinux.org/RPi-Cam-Web-Interface
+Part | Cost
+| --- | ---: |
+| Raspberry Pi board (mine is B2 v1.1) | $TBA |
+| USB wifi dongle or ethernet connection | $TBA |
+| 12v power supply | $TBA |
+| IR LED array | $TBA |
+| 12v > 5v buck | $TBA |
+| XXX MOSFET | $TBA |
+| various resistors and soldering supplies | $TBA |
