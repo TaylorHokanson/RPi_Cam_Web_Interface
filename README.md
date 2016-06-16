@@ -6,7 +6,7 @@ Part | Cost
 | --- | ---: |
 | Raspberry Pi board (mine is B2 v1.1) | $TBA |
 | USB wifi dongle or ethernet connection | $TBA |
-| a href="https://www.amazon.com/gp/product/B00DKSI0S8/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1">12v power supply</a>| $12 |
+| [12v power supply](https://www.amazon.com/gp/product/B00DKSI0S8/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) | $12 |
 | IR LED array | $TBA |
 | [12v -> 5v buck](https://www.amazon.com/gp/product/B008BHAOQO/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) | $6 |
 | XXX MOSFET | $TBA |
