@@ -116,10 +116,6 @@ function set_ac() {
   send_cmd("ac " + document.getElementById("ac_en").value + " " + document.getElementById("ac_y").value + " " + document.getElementById("ac_u").value + " " + document.getElementById("ac_v").value);
 }
 
-function set_ag() {
-  send_cmd("ag " + document.getElementById("ag_r").value + " " + document.getElementById("ag_b").value);
-}
-
 //
 // Shutdown
 //
@@ -208,7 +204,10 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("md_button").onclick = function() {send_cmd("md 1");};
       document.getElementById("halt_button").disabled = false;
       document.getElementById("halt_button").value = "stop camera";
-      document.getElementById("halt_button").onclick = function() {send_cmd("ru 0");};
+      
+      // added by T-Ho
+      document.getElementById("halt_button").onclick = function() {ajaxLEDoff();setTimeout(function(){send_cmd("ru 0");},1000); };   
+      
       document.getElementById("preview_select").disabled = false;
       halted = 0;
 	    updatePreview();
@@ -228,7 +227,7 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("md_button").onclick = function() {send_cmd("md 0");};
       document.getElementById("halt_button").disabled = true;
       document.getElementById("halt_button").value = "stop camera";
-      document.getElementById("halt_button").onclick = function() {};
+      document.getElementById("halt_button").onclick = function() {};           
       document.getElementById("preview_select").disabled = false;
       halted = 0;
 	    updatePreview();
@@ -248,7 +247,7 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("md_button").onclick = function() {};
       document.getElementById("halt_button").disabled = true;
       document.getElementById("halt_button").value = "stop camera";
-      document.getElementById("halt_button").onclick = function() {};
+      document.getElementById("halt_button").onclick = function() {};        
       document.getElementById("preview_select").disabled = false;
     }
     else if(ajax_status.responseText == "tl_md_ready") {
@@ -266,7 +265,7 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("md_button").onclick = function() {send_cmd("md 0");};
       document.getElementById("halt_button").disabled = true;
       document.getElementById("halt_button").value = "stop camera";
-      document.getElementById("halt_button").onclick = function() {};
+      document.getElementById("halt_button").onclick = function() {};            
       document.getElementById("preview_select").disabled = false;
       halted = 0;
 	    updatePreview();
@@ -283,10 +282,10 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("timelapse_button").onclick = function() {send_cmd("tl 1");};
       document.getElementById("md_button").disabled = true;
       document.getElementById("md_button").value = "motion detection start";
-      document.getElementById("md_button").onclick = function() {};
+      document.getElementById("md_button").onclick = function() {};    
       document.getElementById("halt_button").disabled = true;
       document.getElementById("halt_button").value = "stop camera";
-      document.getElementById("halt_button").onclick = function() {};
+      document.getElementById("halt_button").onclick = function() {};           
       document.getElementById("preview_select").disabled = true;
     }
     else if(ajax_status.responseText == "md_video") {
@@ -301,10 +300,10 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("timelapse_button").onclick = function() {send_cmd("tl 1");};
       document.getElementById("md_button").disabled = true;
       document.getElementById("md_button").value = "recording video...";
-      document.getElementById("md_button").onclick = function() {};
+      document.getElementById("md_button").onclick = function() {};      
       document.getElementById("halt_button").disabled = true;
       document.getElementById("halt_button").value = "stop camera";
-      document.getElementById("halt_button").onclick = function() {};
+      document.getElementById("halt_button").onclick = function() {};      
       document.getElementById("preview_select").disabled = true;
     }
     else if(ajax_status.responseText == "tl_video") {
@@ -322,7 +321,7 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("md_button").onclick = function() {};
       document.getElementById("halt_button").disabled = true;
       document.getElementById("halt_button").value = "stop camera";
-      document.getElementById("halt_button").onclick = function() {};
+      document.getElementById("halt_button").onclick = function() {};           
       document.getElementById("preview_select").disabled = false;
     }
     else if(ajax_status.responseText == "tl_md_video") {
@@ -355,7 +354,7 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("timelapse_button").onclick = function() {};
       document.getElementById("md_button").disabled = true;
       document.getElementById("md_button").value = "motion detection start";
-      document.getElementById("md_button").onclick = function() {};
+      document.getElementById("md_button").onclick = function() {};    
       document.getElementById("halt_button").disabled = true;
       document.getElementById("halt_button").value = "stop camera";
       document.getElementById("halt_button").onclick = function() {};
@@ -376,7 +375,10 @@ ajax_status.onreadystatechange = function() {
       document.getElementById("md_button").onclick = function() {};
       document.getElementById("halt_button").disabled = false;
       document.getElementById("halt_button").value = "start camera";
-      document.getElementById("halt_button").onclick = function() {send_cmd("ru 1");};
+
+      // added by T-Ho
+      document.getElementById("halt_button").onclick = function() {send_cmd("ru 1");ajaxLEDon();};     
+      
       document.getElementById("preview_select").disabled = false;
       halted = 1;
 	    updatePreview();
