@@ -1,3 +1,5 @@
+![project photo](media/BabyMonitor.jpg)
+
 ###RPi Baby Monitor (WIP)
 
 This project is a fork of the [RPi Cam Web
@@ -45,6 +47,9 @@ GPIO | Connect To
 | 2 | 5V
 | 6 | Ground
 | 26 | MOSFET
+
+###Housing
+If you have access to a laser cutter, you'll find the housing I designed in the [media](media) folder.
 
 ###Usage
 1. Enter RPi IP address into a browser and navigate to HTML the folder.
