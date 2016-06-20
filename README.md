@@ -2,7 +2,7 @@
 
 This project is a fork of the [RPi Cam Web
 Interface](https://github.com/silvanmelchior/RPi_Cam_Web_Interface). It
-adds an IR LED array that allows low light operation and is controllable via web interface.
+adds an IR LED array that allows low light operation and is controllable via web interface. Most of these parts were sponsored by [Newark / Element14](http://www.newark.com/) - thanks guys!
 
 ###BOM
 
@@ -51,7 +51,6 @@ GPIO | Connect To
 2. Toggle camera start/stop with the GUI button. Every time after the first press, this button will activate the camera and IR array for 10 seconds, then turn itself back off. This duration can be modified by changing the ``sleep()`` duration in ledoff.php.
 
 ###Next Steps
-Right now my camera only gets about 1fps over wifi. This should only affect the live preview (as opposed to recording), but I'd like to figure out how to speed it up if possible without resorting to a tiny image/poor quality. I tried [these steps](http://elinux.org/RPi-Cam-Web-Interface#Network_speed_.2F_choppy_video) but had no luck.
-
+Right now my camera only gets about 1fps over wifi. I tried [these steps](http://elinux.org/RPi-Cam-Web-Interface#Network_speed_.2F_choppy_video) but had no luck. Wired Ehternet works much faster (with occassional choppiness) but is not possible in all situations. Drop me a line if you figure out a workaround!
 
 
