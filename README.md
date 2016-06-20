@@ -13,8 +13,8 @@ Part | Cost
 | [USB wifi dongle](http://www.newark.com/adafruit-industries/814/miniature-wifi-module-raspberry/dp/53W6285?ost=53W6285&selectedCategoryId=&categoryNameResp=All%2BCategories&iscrfnonsku=false) | $12 |
 | [12v power supply](https://www.amazon.com/gp/product/B00DKSI0S8/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) | $12 |
 | [IR LED array](https://www.amazon.com/gp/product/B0056XFS5S/ref=oh_aui_detailpage_o05_s00?ie=UTF8&psc=1) | $4 |
-| [12v -> 5v buck](https://www.amazon.com/gp/product/B008BHAOQO/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) | $6 |
-| [N-Channel MOSFET](https://www.sparkfun.com/products/10213) | $1 |
+| [12v to 5v buck](https://www.amazon.com/gp/product/B008BHAOQO/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1) | $6 |
+| [N-Channel MOSFET](https://www.sparkfun.com/products/10213) (overkill) | $1 |
 | 10k resistor, misc wire | $0 |
 | Total | $100 |
 
@@ -22,9 +22,36 @@ Part | Cost
 
 1. Download and install [NOOBS](https://www.raspberrypi.org/downloads/)
 2. Enable [SSH](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh/enabling-ssh)
-3. '''sudo apt-get install lsb-release
- lsb_release -a'''
- Confirm OS code name is “Jessie”
-3. [Attach camera](https://www.raspberrypi.org/help/camera-module-setup/) and [test](https://www.raspberrypi.org/documentation/configuration/camera.md)
-4. 
+3. ``sudo apt-get install lsb-release``
+4. ``lsb_release -a``
+5. Confirm OS code name. I have only tested this code on [Jessie](https://www.raspberrypi.org/blog/raspbian-jessie-is-here/).
+6. [Attach](https://www.raspberrypi.org/help/camera-module-setup/) and [test](https://www.raspberrypi.org/documentation/configuration/camera.md) camera
+7. Install and test [WiringPi](https://learn.sparkfun.com/tutorials/raspberry-gpio/c-wiringpi-setup)
+7. ``git clone https://github.com/TaylorHokanson/RPi_Cam_Web_Interface.git``
+8. ``cd RPi_Cam_Web_Interface``
+9. ``chmod u+x *.sh``
+10. ``./install.sh``
+
+###Schematic
+![Schematic](media/schematic2.jpg)
+
+###A Note About GPIO
+Wiring RPi GPIO pins can be confusing. This code runs in BCM mode and works for the RPi model I tested. You should see [this explanation](http://raspberrypi.stackexchange.com/questions/12966/what-is-the-difference-between-board-and-bcm-for-gpio-pin-numbering) for tips on how to verify which numbering system your RPi requires. You can change the pin that controls the IR array by modifying ledon.php and ledoff.php in the www folder.
+
+![GPIO](media/GPIO.png)
+
+GPIO | Connect To
+| :---: | :---: |
+| 2 | 5V
+| 6 | Ground
+| 26 | MOSFET
+
+###Usage
+1. Enter RPi IP address into a browser and navigate to HTML the folder.
+2. Toggle camera start/stop with the GUI button. Every time after the first press, this button will activate the camera and IR array for 10 seconds, then turn itself back off. This duration can be modified by changing the ``sleep()`` duration in ledoff.php.
+
+###Next Steps
+Right now my camera only gets about 1fps over wifi. This should only affect the live preview (as opposed to recording), but I'd like to figure out how to speed it up if possible without resorting to a tiny image/poor quality. I tried [these steps](http://elinux.org/RPi-Cam-Web-Interface#Network_speed_.2F_choppy_video) but had no luck.
+
+
 
